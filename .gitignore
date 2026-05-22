@@ -1,0 +1,5 @@
+*.class
+*.log
+*.ctxt
+*.mtj.tmp/
+hs_err_pid*
