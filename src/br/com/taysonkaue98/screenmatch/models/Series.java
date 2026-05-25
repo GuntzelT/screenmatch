@@ -1,6 +1,7 @@
 package br.com.taysonkaue98.screenmatch.models;
+import br.com.taysonkaue98.screenmatch.calculations.Classification;
 
-public class Series extends Title {
+public class Series extends Title implements Classification {
 
 // Atributos da classe Series + Herança da classe Title
 
@@ -54,6 +55,13 @@ public class Series extends Title {
     @Override
     public int getDurationInMinutes() {
         return seasons * episodesPerSeason * minutesPerEpisode;
+    }
+
+//Sobrescreve o método getClassification da interface Classification para calcular a classificação da série com base na média das avaliações
+    
+@Override
+    public int getClassification() {
+        return (int) avarageRating() / 2;
     }
 
 

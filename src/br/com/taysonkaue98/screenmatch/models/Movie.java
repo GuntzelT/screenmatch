@@ -1,6 +1,7 @@
 package br.com.taysonkaue98.screenmatch.models;
+import br.com.taysonkaue98.screenmatch.calculations.Classification;
 
-public class Movie extends Title {
+public class Movie extends Title implements Classification {
 
 //Atributos da classe Movie
 
@@ -16,6 +17,12 @@ public class Movie extends Title {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+//Sobrescreve o método getClassification da interface Classification para calcular a classificação do filme com base na média das avaliações
+    
+    public int getClassification() {
+        return (int) avarageRating() / 2;
     }
 
 }

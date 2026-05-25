@@ -1,6 +1,9 @@
 import br.com.taysonkaue98.screenmatch.models.Movie;
 import br.com.taysonkaue98.screenmatch.models.Series;
+import br.com.taysonkaue98.screenmatch.models.Episodie;
 import br.com.taysonkaue98.screenmatch.calculations.TimeCalculator;
+import br.com.taysonkaue98.screenmatch.calculations.RecomendFilter;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -14,7 +17,7 @@ public class Main {
 
 //Chamando os métodos do objeto movie1 para exibir informações, adicionar avaliações e calcular a média das avaliações
 
-        movie1.displayMovieInfo();
+        movie1.displayTitleInfo();
         movie1.addReview(9.5);
         movie1.addReview(8.0);
         movie1.addReview(6.0);
@@ -47,5 +50,18 @@ public class Main {
         calculator.addMinutes(series1);
         System.out.println("Total time to consume the titles: " + calculator.getTotalMinutes() + " minutes");
 
+
+        RecomendFilter recomendFilter = new RecomendFilter();
+        recomendFilter.filterByClassification(movie1);
+        
+        Episodie episode1 = new Episodie();
+
+        episode1.setTitle("Pilot");
+        episode1.setEpisodeNumber(1);
+        episode1.setTotalReviews(120);
+        episode1.setSeries(series1);
+        recomendFilter.filterByClassification(episode1);
     }
+
+    
 }
