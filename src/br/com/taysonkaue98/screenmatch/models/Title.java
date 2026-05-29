@@ -1,6 +1,6 @@
 package br.com.taysonkaue98.screenmatch.models;
 
-public class Title {
+public class Title implements Comparable<Title> {
 
 //Atributos da classe Title
 
@@ -10,6 +10,14 @@ public class Title {
     private int durationInMinutes;
     private int totalReviews;
     private boolean isAvailableOnStreaming;
+
+    
+//Construtor da classe Title para inicializar o título e a data de lançamento do título    
+
+    public Title(String title, int releaseDate) {
+        this.title = title;
+        this.releaseDate = releaseDate;
+    }
 
 //Metodo para obter o total de avaliações dos titulos
 
@@ -70,4 +78,9 @@ public class Title {
         return sumRating / totalReviews;
     }
 
+//Metodo para comparar os títulos com base no título para permitir a ordenação de uma lista de títulos
+    @Override
+    public int compareTo(Title other) {
+        return this.getTitle().compareTo(other.getTitle());
+    }
 }

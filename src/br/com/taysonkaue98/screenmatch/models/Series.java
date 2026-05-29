@@ -10,6 +10,11 @@ public class Series extends Title implements Classification {
     private boolean active;
     private int minutesPerEpisode;
 
+//Construtor da classe Series para inicializar o título e a data de lançamento da série
+    public Series(String title, int releaseDate) {
+        super(title, releaseDate);
+    }
+
 // Metodos para obter e definir as temporadas da série
 
     public int getSeasons() {    
@@ -62,6 +67,12 @@ public class Series extends Title implements Classification {
 @Override
     public int getClassification() {
         return (int) avarageRating() / 2;
+    }
+
+// Sobrescreve o método toString para fornecer uma representação personalizada do objeto Series
+    @Override
+    public String toString() {
+        return "Series: " + this.getTitle() + " (" + this.getReleaseDate() + ")";
     }
 
 

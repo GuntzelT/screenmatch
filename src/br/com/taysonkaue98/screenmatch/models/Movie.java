@@ -7,6 +7,11 @@ public class Movie extends Title implements Classification {
 
     private String director;
 
+//Construtor da classe Movie para inicializar o título e a data de lançamento do filme
+    public Movie(String title, int releaseDate) {
+        super(title, releaseDate);
+    }
+
 //Metodo para obter o diretor do filme
 
     public String getDirector() {
@@ -23,6 +28,12 @@ public class Movie extends Title implements Classification {
     
     public int getClassification() {
         return (int) avarageRating() / 2;
+    }
+
+// Sobrescreve o método toString para fornecer uma representação personalizada do objeto Movie
+    @Override
+    public String toString() {
+        return "Movie: " + this.getTitle() + " (" + this.getReleaseDate() + ")";
     }
 
 }

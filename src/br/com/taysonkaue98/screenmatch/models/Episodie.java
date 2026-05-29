@@ -10,6 +10,10 @@ public class Episodie extends Title implements Classification {
     private Series series;
     private int totalReviews;
 
+    public Episodie() {
+        super("", 0);
+    }
+
     // Metodos para obter o total de avaliações do episódio
     public int getTotalReviews() {
         return totalReviews;
