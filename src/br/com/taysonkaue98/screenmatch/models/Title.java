@@ -33,6 +33,18 @@ public class Title implements Comparable<Title> {
         this.releaseDate = releaseDate;
     }
 
+//Construtor da classe Title para inicializar os atributos com base em um objeto TitleOmdb, extraindo as informações relevantes do objeto e convertendo-as para os tipos apropriados
+
+    public Title(TitleOmdb myTitleOmdb) {
+    this.title = myTitleOmdb.title();
+    
+    
+    this.releaseDate = Integer.valueOf(myTitleOmdb.year());
+    
+   
+    this.durationInMinutes = Integer.valueOf(myTitleOmdb.runtime().replace(" min", ""));
+}
+
 //Metodo para obter o total de avaliações dos titulos
 
     public int getTotalReviews() {
