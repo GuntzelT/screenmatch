@@ -1,0 +1,23 @@
+[
+  {
+    "Title": "The Matrix",
+    "ReleaseDate": 1999,
+    "SumRating": 0.0,
+    "DurationInMinutes": 136,
+    "TotalReviews": 0
+  },
+  {
+    "Title": "Top Gun",
+    "ReleaseDate": 1986,
+    "SumRating": 0.0,
+    "DurationInMinutes": 110,
+    "TotalReviews": 0
+  },
+  {
+    "Title": "The Alien",
+    "ReleaseDate": 2020,
+    "SumRating": 0.0,
+    "DurationInMinutes": 90,
+    "TotalReviews": 0
+  }
+]
