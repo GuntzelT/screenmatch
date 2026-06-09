@@ -1,14 +1,28 @@
 package br.com.taysonkaue98.screenmatch.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Title implements Comparable<Title> {
 
-//Atributos da classe Title
+// Atributos da classe Title, cada um mapeado para um campo específico no JSON usando a anotação @SerializedName
 
+    @SerializedName("Title")
     private String title;
+
+    @SerializedName("Year")
     private int releaseDate;
+
+    @SerializedName("imdbRating")
     private double sumRating;
+
+    @SerializedName("Runtime")
     private int durationInMinutes;
+
+    @SerializedName("imdbID")
+    private String imdbID;
+
     private int totalReviews;
+
     private boolean isAvailableOnStreaming;
 
     
@@ -82,5 +96,12 @@ public class Title implements Comparable<Title> {
     @Override
     public int compareTo(Title other) {
         return this.getTitle().compareTo(other.getTitle());
+    }
+
+    @Override
+    public String toString() {
+        return "title='" + title + '\'' +
+                ", releaseDate=" + releaseDate +
+                '}';
     }
 }
